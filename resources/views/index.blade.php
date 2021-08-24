@@ -139,9 +139,8 @@
             <form action="/add-to-cart" method="POST">
             @csrf
             <input type="hidden" name="product_id" value="{{$product['id']}}">
-            <button class="border border-primary bg-primary text-white px-8 py-4 
-            font-medium rounded uppercase flex items-center gap-2 hover:bg-transparent
-            hover:text-primary transition">
+            <button class="block w-full py-1 text-center text-white bg-primary border py-3 text-sm border-primary
+    rounded-b hover:bg-transparent hover:text-primary transition" style="hover{color:#FD3057;}">
                 <i class="fas fa-shopping-bag"> Adicionar ao carinho</i>
            </button>
          </form>

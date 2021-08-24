@@ -1,14 +1,16 @@
 @extends('layouts.app')
 @section('content')
 
-@foreach($apiArray as $api)
+@for($i=0;$i<count($results);$i++)
 
+@foreach($results as $result)
 <h1>Nome:</h1>
-{{$api['price']}} 
+{{$result[$i]['name']}} 
 <br>
 
-
 @endforeach
+
+@endfor
 
 @endsection
 

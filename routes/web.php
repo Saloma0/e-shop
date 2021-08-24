@@ -30,6 +30,7 @@ Route::post('/login',[UserController::class,'index']);
 Route::get('/',[ProductController::class,'index']);
 Route::get('/loja',[LojaController::class,'index']);
 Route::get('/details/{id}',[LojaController::class,'detail']);
+Route::get('/checkout/{id}',[LojaController::class,'checkout']);
 Route::post('/add-to-cart',[LojaController::class,'addToCart']);
 Route::get('/remove-cart/{id}',[LojaController::class,'removeCart']);
 Route::get('/cartlist',[LojaController::class,'cartList']);
@@ -37,11 +38,18 @@ Route::get('/ordernow',[LojaController::class,'orderNow']);
 Route::post('/orderplace',[LojaController::class,'orderPlace']);
 Route::post('/register',[UserController::class,'store']);
 
-Route::get('/apptest',[ApiController::class,'index']);
+// Route::post('/admin',[ApiController::class,'store']);
+
+Route::get('/enable',[ApiController::class,'index']);
+
 
  Route::get('/afiliados', function () {
      return view('afiliados');
  });
+
+ Route::get('/admin', function () {
+    return view('admin');
+});
 
  Route::get('/checkout', function () {
     return view('checkout');

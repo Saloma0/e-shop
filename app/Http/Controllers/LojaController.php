@@ -21,7 +21,8 @@ class LojaController extends Controller
         //
         $data= Product::all();
 
-       return view('loja',['products'=>$data]);
+       return view('loja',['products'=>$data
+    ]);
     }
 
     public function detail($id){
@@ -128,7 +129,16 @@ class LojaController extends Controller
             Cart::where('user_id',$user_id)->delete();
         }
 
-        return redirect('/cartlist');
+        return view('orderplace');
+
+    }
+
+    public function checkout($id){
+
+        $data= Product::find($id);
+
+        return view('checkout',['product'=>$data]);
+
 
     }
 

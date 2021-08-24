@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ApiController extends Controller
 {
@@ -18,7 +19,29 @@ class ApiController extends Controller
         //
         $api= Http::get('https://restapibf.herokuapp.com/api/products');
 
-        var_dump($api);
+        $results=$api->json();
+
+        foreach($results as $result):
+
+        $num=count($result);
+
+        for($i=0;$i<$num;$i++){
+
+            $product= new Product;
+            $product->name=$result[$i]['name'];
+            $product->price=$result[$i]['price'];
+            $product->category=$result[$i]['category'];;
+            $product->description=$result[$i]['description'];;
+            $product->gallery=$result[$i]['gallery'];
+            
+            $product->save();
+
+        }
+
+        endforeach;
+
+        return redirect('/');
+   
     }
 
     /**

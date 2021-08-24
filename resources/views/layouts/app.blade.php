@@ -11,6 +11,13 @@ $total = LojaController::cartItem();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSRF Token -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -22,7 +29,8 @@ $total = LojaController::cartItem();
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
     <style>
-        .bg-primary{
+    
+    .bg-primary{
             background-color:#FD3057;
         }
 
@@ -33,15 +41,15 @@ $total = LojaController::cartItem();
             color:#FD3057;
         }
 
+        
         #summary {
       background-color: #f6f6f6;
     }
 
-    ody{
+    body{
  margin:0;
  padding: 0;
- font-family: sans-serif;
- 
+ font-family: "Roboto",sans-serif;
 }
 
 input[type="radio"] + label span {
