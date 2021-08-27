@@ -18,16 +18,21 @@ use App\Http\Controllers\ApiController;
 */
 
 
-// Route::get('/', function () {
-    // return view('index');
-// });
+Route::get('/', function () {
+    return view('base');
+});
+
+Route::get('/single', function () {
+    return view('single');
+});
+
 
 Auth::routes();
 
 // Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/login',[UserController::class,'index']);
-Route::get('/',[ProductController::class,'index']);
+// Route::get('/',[ProductController::class,'index']);
 Route::get('/loja',[LojaController::class,'index']);
 Route::get('/details/{id}',[LojaController::class,'detail']);
 Route::get('/checkout/{id}',[LojaController::class,'checkout']);
@@ -46,6 +51,11 @@ Route::get('/enable',[ApiController::class,'index']);
  Route::get('/afiliados', function () {
      return view('afiliados');
  });
+
+ Route::get('/products', function () {
+    return view('products');
+});
+
 
  Route::get('/admin', function () {
     return view('admin');
